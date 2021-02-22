@@ -1,3 +1,11 @@
+
+# Fork
+
+The main purpose of this fork was to make it possible to know which WebsocketNode instantiated a particular connection.
+This can now be achieved with a argument to the creator function.
+
+This mechanism allows you to create an arbitrary number of websocket servers at runtime, each with their own set of connections and their own message handler function.
+
 # ESP32 HTTPS Server
 
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/fhessel/esp32_https_server?label=Version&sort=semver) ![Build Examples](https://github.com/fhessel/esp32_https_server/workflows/Build%20Examples/badge.svg?branch=master)

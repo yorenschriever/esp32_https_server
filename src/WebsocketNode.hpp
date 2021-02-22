@@ -8,16 +8,17 @@
 
 namespace httpsserver {
 
-typedef WebsocketHandler* (WebsocketHandlerCreator)();
+typedef WebsocketHandler* (WebsocketHandlerCreator)(const void* arg);
 
 class WebsocketNode : public HTTPNode {
 public:
-  WebsocketNode(const std::string &path, const WebsocketHandlerCreator creatorFunction, const std::string &tag = "");
+  WebsocketNode(const std::string &path, const WebsocketHandlerCreator creatorFunction, void* creatorFunctionArg, const std::string &tag = "");
   virtual ~WebsocketNode();
   WebsocketHandler* newHandler();
   std::string getMethod() { return std::string("GET"); }
 private:
   const WebsocketHandlerCreator * _creatorFunction;
+  const void* _creatorFunctionArg;
 };
 
 } /* namespace httpsserver */

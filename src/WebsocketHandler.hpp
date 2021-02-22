@@ -10,6 +10,8 @@
 
 #include <sstream>
 
+#define TAG "WSCK"
+
 #include "HTTPSServerConstants.hpp"
 #include "ConnectionContext.hpp"
 #include "WebsocketInputStreambuf.hpp"
